@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введіть два цілі числа:");
+        int number1 = Convert.ToInt32(Console.ReadLine());
+        int number2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Введіть дію (+, -, *, /):");
+        char operation = Console.ReadLine()[0];
+
+        double result = 0;
+
+        switch (operation)
+        {
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            case '/':
+                result = (double)number1 / number2; //можливе ділення на нуль
+                break;
+            default:
+                Console.WriteLine("Неправильна дія.");
+                return;
+        }
+
+        Console.WriteLine($"Результат: {result}");
+        Console.ReadKey();
+    }
+}
